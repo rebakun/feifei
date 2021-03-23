@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			<img src="img/狗.gif" width="200" height="200"/>
+			<h1>猜数字游戏</h1>
+			<!-- {{keyNum}} --><br />
+			<input v-model="userNum" />
+			<!-- 条件判断 -->
+			
+			   <li v-if="userNum==keyNum">恭喜你答对了</li>
+			<li v-else-if="userNum==''">请输入</li>
+			<li v-else-if="userNum>keyNum">大了</li>
+			<li v-else="userNum<keyNum">小了</li>
+		</div>
+		
+		<script type="text/javascript">
+			let v=new Vue({
+				el:'#app',
+				data:{
+					keyNum:Math.floor(Math.random()*10),
+					userNum:''
+				}
+			})
+		</script>
+	</body>
+</html>
