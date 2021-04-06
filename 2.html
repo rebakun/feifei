@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			
+			<div>{{schools[0].name}}</div>
+			<br>
+			<div>{{schools[0].location}}</div>
+		</div>
+		<script type="text/javascript">
+			let n=new Vue({
+				el:'#app',
+				data:{
+					
+					schools:[
+						{name:'耶鲁大学',location:'美国康涅狄格州纽黑文'},
+						{name:'哈弗大学',location:'美国马萨诸塞州波士顿都市区剑桥市'},
+						{name:'牛津大学',location:'英国牛津'},
+						{name:'剑桥大学',location:'英国剑桥'}
+					]
+				}
+			})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			<input v-model="num" />
+			<br>
+		你输入的月份是{{num}}	有{{a[num-1]}},
+			
+		</div>
+		<script type="text/javascript">
+			let n=new Vue({
+				el:'#app',
+				data:{
+					num:"",
+					a:[31,28,31,30,31,30,31,31,30,31,30,31]
+				}
+			})
+		</script>
+	</body>
+</html>
