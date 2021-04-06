@@ -9,10 +9,10 @@
 		<div id="app">
 			<p>红球：</p>{{red1}},{{red2}},{{red3}},{{red4}},{{red5}},{{red6}},
 			<p>蓝球：</p>{{blue1}},<br>
-			<input v-on:click="red1=Math.ceil(Math.random()*10);red2=Math.ceil(Math.random()*10);
-			red3=Math.ceil(Math.random()*10);red4=Math.ceil(Math.random()*10);
-			red5=Math.ceil(Math.random()*10);red6=Math.ceil(Math.random()*10);
-			blue1=Math.ceil(Math.random()*10);" type="button" value="按钮" />
+			<input v-on:click="red1=Math.ceil(Math.random()*36);red2=Math.ceil(Math.random()*36);
+			red3=Math.ceil(Math.random()*36);red4=Math.ceil(Math.random()*36);
+			red5=Math.ceil(Math.random()*36);red6=Math.ceil(Math.random()*36);
+			blue1=Math.ceil(Math.random()*18);" type="button" value="按钮" />
 		</div>
 		<script type="text/javascript">
 		let v=new Vue({
