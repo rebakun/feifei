@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			{{y}}<br>
+			<button type="button" v-on:click="y=Math.floor(Math.random()*20);">
+			开始抽奖</button>
+			<div>
+			{{x}}
+			<div v-for="user in users">{{users[y-1]}}</div>
+			
+			<p v-if="y<7">中奖了</p>
+			<p v-else>你没中</p>
+			
+			</div>
+		</div>
+		<script type="text/javascript">
+			let v=new Vue({
+				el:'#app',
+				data:{
+					x:'恭喜',
+					y:'',
+					users:[
+						'小明','小白','小巴','小美','小迪','狒狒'
+						// {name:'小明'},
+						// {name:'小白'},
+						// {name:'小巴'},
+						// {name:'小美'},
+						// {name:'小迪'},
+						
+					]
+					
+					
+				}
+			})
+		</script>
+	</body>
+</html>
