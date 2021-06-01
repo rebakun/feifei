@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<canvas id="myCanvas" width="800" height="600"></canvas>
+		<div id="app">
+			<input type="text" @click="show()" @keyup.enter="show()" v-model="userString" name="" id="" value="" />
+			{{userNum}}
+			<p v-if="userNum<3"></p>
+			<p v-else-if="userNum=3">通关成功</p>
+		</div>
+		<script type="text/javascript">
+			let v=new Vue({
+				el:"#app",
+				data:{
+					userString:"",
+					userNum1:0,
+					userNum2:0,
+					userNum3:0,
+					userNum:0,
+				},
+				methods:{
+					show(){
+						console.log(this.userString);
+						// 加载背景
+						let canvas=document.getElementById("myCanvas");
+						let context= canvas.getContext("2d");
+						 let img_background=new Image();
+						 img_background.src="./img/background.gif";
+						 img_background.onload=function(){
+							 context.drawImage(img_background,0,0);
+						 }
+						 
+						 // 显示青蛙
+						 let img_frog=new Image();
+						 img_frog.src="./img/frog.gif";
+						 img_frog.onload=function(){
+						 	 context.drawImage(img_frog,400,400);
+						 }
+						 
+						 // 条件判断
+						 if(this.userString=="hello"){
+							 this.userString="";
+							 img_frog.onload=function(){
+							 	context.drawImage(img_frog,250,250);
+							 }
+							 v.userNum1=1
+						 }
+						 
+						 if(this.userString=="world"){
+							 	this.userString="";
+							 	img_frog.onload=function(){
+							 		context.drawImage(img_frog,450,150);
+							 	 }
+								v.userNum2=1
+							 }
+							 
+						 if(this.userString=="hi"){
+						 	 this.userString="";
+						 	 img_frog.onload=function(){
+						 		 context.drawImage(img_frog,350,80);
+						    }
+							v.userNum3=1
+						 }
+						 
+						 v.userNum=v.userNum1+v.userNum2+v.userNum3;
+						 
+						
+					}
+				}
+			})
+		</script>
+	</body>
+</html>
